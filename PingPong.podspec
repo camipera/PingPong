@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.dependency 'SwiftyJSON'
   s.dependency 'Alamofire', '~> 4.4'
   s.dependency 'FMDB' 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
 end
