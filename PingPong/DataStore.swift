@@ -238,7 +238,7 @@ public class DataStore {
         }
     }
     
-    public func queryDocumentStore(parameters : (property: String, value: Any)..., callback : @escaping ([JSON]) -> ()) {
+    public func queryDocumentStore(parameters : (property: String, value: Any)..., callbackQueue cQueue: DispatchQueue? = nil, callback : @escaping ([JSON]) -> ()) {
         queue.inDatabase { (database) in
             var documents = [JSON]()
 
@@ -256,7 +256,12 @@ public class DataStore {
             } catch {
                 print("There was an error executing database queries or updates.")
             }
-            callback(documents);
+
+            if let cQueue = cQueue {
+                cQueue.async { callback(documents) }
+            } else {
+                callback(documents)
+            }
         }
     }
     
