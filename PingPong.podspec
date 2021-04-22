@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.authors             = { "Zane Kellog" => "zane@belovedrobot.com", "Juan Pereira" => "juan@belovedrobot.com" }
   s.social_media_url   = "http://twitter.com/Belovedrobot"
   s.platform     = :ios, "10.0"
-  s.source       = { :git => 'https://github.com/BelovedRobot/PingPong.git', :tag => '0.3.4' }
+  s.source       = { :git => 'https://github.com/BelovedRobot/PingPong.git', :tag => '0.3.5' }
   s.source_files  = "PingPong", "PingPong/*.{h,m,swift}"
   s.resource_bundles = {
     'PingPong' => [
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   }
 
   s.dependency 'SwiftyJSON'
-  s.dependency 'Alamofire', '~> 4.4'
+  s.dependency 'Alamofire'
   s.dependency 'FMDB' 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
 end
